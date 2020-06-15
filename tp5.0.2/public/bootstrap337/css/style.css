@@ -1,0 +1,129 @@
+body {
+	padding: 0;
+	margin: 0;
+	background: #000;
+	overflow: hidden;
+}
+
+body > div {
+	position: absolute;
+	top: 0; left: 0;
+}
+
+/* MENU STUFF ================= */
+#menu {
+	position: absolute;
+	z-index: 12;
+	list-style: none;
+	padding: 0; margin: 0;
+	top: 20px;
+	left: 20px;
+	background: #fff;
+	padding: 10px;
+}
+
+.current {
+	background: black;
+	color: #fff !important;
+	border-bottom: 1px solid #000 !important;
+}
+
+.current:hover {
+	color: #fff;
+}
+
+#menu li a {
+	border-bottom: 1px solid #eee;
+	font-family: Arial, sans-serif;
+	width: 250px;
+	padding: 10px;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+}
+
+#menu li a:hover {
+	background: #000;
+	color: #fff;
+	border-bottom: 1px solid #000;
+}
+
+/* END MENU STUFF =========================== */
+
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 11;
+}
+
+ .before-slices, #home .after-slices {
+	display: inline-block;
+	height:  inherit;
+	text-transform: lowercase;
+}
+
+#home .slice {
+	display: inline-block;
+	position: relative;
+	background: #fff;
+	z-index: inherit;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+	font-weight: bold;
+}
+
+#about .slice {
+	background: #fff337;
+}
+
+#services .slice {
+	background-color: #47bcf2;
+}
+
+.endShadow {
+	box-shadow: none !important;
+}
+
+
+.slices, .vertical, .horizontal {
+	width: inherit;
+	height: inherit;	
+}
+
+.vertical .slice {
+	height: inherit;
+	top: 100%;
+	width: 90px;
+}
+
+.horizontal .slice {
+	position: absolute;
+	top: 0;
+	right: 100%;
+	width: inherit;
+	height: 90px;
+	z-index: inherit;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.slice {
+	position: absolute;
+	text-transform: lowercase;
+}
+
+.left-slices, .right-slices {
+	height: inherit;
+	width: 50%;
+	display: inline-block;
+}
+.left-slices .slice, .right-slices .slice {
+	width: inherit;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+	height: 90px;
+	width: 50%;
+	font-style: italic;
+}

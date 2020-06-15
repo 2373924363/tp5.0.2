@@ -1,0 +1,186 @@
+{include file="../public/header.html" /}     <!--从入口文件index.php开始算路径？-->
+
+<script type="text/javascript" src="../../../../public/bootstrap337/js/jquery-1.10.1.js"></script>
+
+
+<script src="../../../../public/bootstrap337/js/jq.snow.js"></script>
+<!--下面是调用方法和参数说明-->
+<script>
+$(function(){
+	$.fn.snow({ 
+		minSize: 5,		//雪花的最小尺寸
+		maxSize: 30, 	//雪花的最大尺寸
+		newOn: 100,
+			//雪花出现的频率 这个数值越小雪花越多
+	});
+});
+</script>
+<style type="text/css">
+	*{margin:0px;padding:0px;}
+	.bei1{
+		position: relative;
+		margin: 0px auto;
+		width:1080px;height:1250px;background:url(../../../../public/bootstrap337/images/3.jpg);background-size: cover; color:#ccc;
+         
+	}
+	#zu1{
+		width:1080px;
+		height:250px;
+		position:absolute;
+		
+	    left:0px;
+		background-image:url(../../../../public/bootstrap337/images/zu2.png);
+
+	
+		}
+		.zhong{
+			margin: 0px auto;
+			width:1080px;height:900px;background-color: rgba(250,255,255,0.2);
+		}
+		
+		.nei{
+			height: 450px;
+			width: 1000px;
+			border: 3px solid #fff;
+			float: right;
+			margin-right:20px;
+			margin-top:10px;  
+
+		}
+		.nei2{
+			height: 350px;
+			width: 1000px;
+			border: 3px solid #fff;
+			float: right;
+			margin-right:20px;
+			margin-top:10px;  
+
+		}
+	
+	.footer{
+		width: 1080px;
+		height: 100px;
+		background: #fff;
+		color: #000;
+		text-align: center;
+		padding-top:40px ;
+		
+		
+	}
+	#xue{
+		margin: 0px auto;
+	}
+	.xian{
+		height: 350px;
+	}
+</style>
+</head>
+<body style="width:100%;
+	height:100%;
+	background:url(../../../../public/bootstrap337/images/1.jpg) no-repeat;
+	background-size:cover;">
+	<div class="bei1">
+   <div id="xue" style=" width:1080px;height:1150px;
+margin: 0px auto;">
+<div  style=" margin:0px auto;height:250px;background: url(../../../../public/bootstrap337/images/4.jpg);background-size: cover;">
+	<span id="zu1"></span>
+    
+	<div style="position: relative;top:200px;
+	width: 250px;height: 50px; font-weight: 900;font-size: 18px;"><?php if(input('?cookie.username')){
+            echo '你好：&nbsp;&nbsp;'.cookie('username').'<br/>';
+            echo '欢迎您的到来!'.'&nbsp;&nbsp;&nbsp;&nbsp;<a href="login">退出</a>';
+        }?></div>
+</div>
+<div class="zhong" style="">
+	<div class="nei" style="">
+		<div class="xian">
+			<a style="margin-left: 20px;color: #fff;font-weight: 900" href="zeng.html">新增</a>
+		<table class="table table-hover">
+    <caption style="text-align:center;color: #fff">成绩表</caption>
+    <thead>
+        <tr>
+          
+            <th>姓名</th>
+            <th>性别</th>
+            <th>科目</th>
+            <th>学号</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+    {volist name='list' id='user'}
+
+           <tr >
+            
+            <!-- <td>{$user.s_id}</td> -->
+            <td>{$user.s_name}</td>
+            <td>{$user.s_sex}</td>
+            
+            <td>{$user.s_km}</td>
+            <td>{$user.s_xh}</td>
+            <td>{$user.s_grade}</td>
+            
+            <td><a href="caozuo.html?id={$user.s_xh}">编辑</a></td>
+            <td><a href="shan?id={$user.s_xh}">删除</a></td>
+        </tr>
+{/volist}
+
+
+    </tbody>
+
+</table>
+</div>
+<div align="center">
+{$list->render()}
+</div></FORM>
+	</div>
+	<div class="nei2" style="">
+		<div class="xian">
+		<table class="table table-hover">
+    <caption style="text-align:center;color: #fff">详细资料</caption>
+    <thead>
+        <tr>
+         
+            <th>姓名</th>
+            <th>性别</th>
+    
+            <th>学号</th>
+            
+            <th>联系电话</th>
+            <th>生日</th>
+            <th>地址</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {volist name='list' id='user'}
+           <tr >
+          
+            <td>{$user.s_name}</td>
+            <td>{$user.s_sex}</td>
+            
+           
+            <td>{$user.s_xh}</td>
+     
+            <td>{$user.s_photo}</td>
+            <td>{$user.s_sheng}</td>
+            <td>{$user.s_di}</td>
+            <td><a href="caozuo2.html?id={$user.s_xh}">编辑</a></td>
+        </tr>
+{/volist}
+
+
+    </tbody>
+
+</table>
+</div>
+</FORM>
+	</div>
+
+</div>
+<div class="footer">广东机电职业技术学院</div>
+</div>
+</div>
+</body>
+</html>

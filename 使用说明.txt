@@ -1,0 +1,3 @@
+1、将整个tp5.0.2文件夹放到Wampserver的www目录中。
+2、将127_0_0_1 (1).sql导入数据库，数据库不能设有密码。
+3、通过输入http://127.0.0.1/tp5.0.2/public/index.php/index/index/login即可。
